@@ -1,0 +1,16 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+html, body { height: 100%; }
+body { margin: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+.loading-dialog .mat-dialog-container {
+  border: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  overflow: inherit !important;
+}
+
+.custom-modalbox > mat-dialog-container {
+  padding: 0 !important;
+}

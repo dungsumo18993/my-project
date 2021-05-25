@@ -1,0 +1,57 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background: #5784b7">
+  <div class="d-flex flex-grow-1" style="margin-left: 5%">
+    <a class="navbar-brand d-none d-lg-inline-block" href="#">
+      <img src="https://lh3.googleusercontent.com/proxy/CRJlyc2dT58xHtokCgWm9XQl3jIRgHe0Ibbi7nhEJZAFhCYm0GcruLCqAJW7MhipaaTmDDjgrcZuilKQFj6FJwnEYW8l3RBnJYGuhhBuwbjDRo8e926eGIAMmWRa8HRMF0gmzw"
+           height="60px" width="60px" alt="">
+    </a>
+    <div class="text-right w-100">
+      <button class="navbar-toggler x" type="button" data-toggle="collapse" data-target="#myNavbar"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar" style="margin-right: 5%">
+    <ul class="navbar-nav ms-auto text-center nav ml-auto">
+      <li class="nav-item">
+        <a routerLink="/home" class="nav-link">
+          <i class="fas fa-list" style="color: #fff748"></i>
+          <span style="color: #fff748" class="mr-3"> Đồ ăn </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:4200/auction/cart">
+          <i class="fas fa-cart-plus" style="color: #fff748"></i>
+          <span style="color: #fff748" class="mr-3"> Giỏ Hàng </span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle cursor" id="navbarDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+<!--          <span style="color: #fff748"> {{account.user.userName}} ( {{account.accountName}} ) </span>-->
+        </a>
+        <div class="dropdown-menu text-center-md dropdown-menu-right mr-3" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/profile/view" >
+            <i class="fas fa-user"></i>
+            <span> Cá nhân </span>
+          </a>
+          <a class="dropdown-item cursor">
+            <i class="fas fa-power-off"></i>
+            <span> Đăng xuất </span>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link cursor" routerLink="/login">
+          <i class="fas fa-sign-in-alt"  style="color: #fff748" ></i>
+          <span  style="color: #fff748"> Đăng Nhập </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
