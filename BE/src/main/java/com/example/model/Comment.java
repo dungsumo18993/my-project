@@ -15,6 +15,9 @@ public class Comment {
     @Column(name = "content")
     private String content;
 
+    @Column(name = "image")
+    private String image;
+
     @Column(name = "comment_time")
     private Timestamp commentTime;
 
@@ -43,6 +46,14 @@ public class Comment {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Timestamp getCommentTime() {

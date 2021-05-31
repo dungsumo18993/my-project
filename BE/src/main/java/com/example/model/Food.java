@@ -22,11 +22,21 @@ public class Food {
     @Min(0)
     private Double price;
 
+    @Column(name = "quantity")
+    @Min(0)
+    private Integer quantity;
+
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "category_id")
     private Category category;
 
-    public Food() {
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 
     public Integer getId() {

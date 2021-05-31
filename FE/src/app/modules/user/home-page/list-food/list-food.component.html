@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="container bg-light form-inline d-flex justify-content-center align-items-center" >
+    <label for="search" class="text-dark mr-4 mt-2">Nhập tên món ăn:</label>
+    <input id="search" class="form-control mr-4 mt-2 rounded-pill search pr-3" type="search"
+           placeholder="Tên món ăn ..." [(ngModel)]="foodName">
+    <select class="form-control rounded-pill mr-3 mt-2" [(ngModel)]="categoryId">
+      <option value="0">Tất Cả Danh Mục</option>
+      <option value="1">Đồ ăn sáng</option>
+      <option value="2">Đồ ăn trưa</option>
+      <option value="3">Đồ ăn tối</option>
+      <option value="4">Đồ tráng miệng</option>
+      <option value="5">Đồ ăn vặt</option>
+      <option value="6">Đồ uống</option>
+    </select>
+    <div class="btn-group mt-2" style="position: static !important;" role="group">
+      <button style="position: static !important;" class="btn btn-primary rounded-pill ml-4"
+        (click)="search()"><i class="fa fa-search"></i> Tìm kiếm
+      </button>
+    </div>
+    <div class="text-danger mb-5 ml-5 mt-4 font-italic font-weight-bolder"><p></p></div>
+  </div>
+  <div class="container bg-light ">
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-dark" style="position: static !important;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="nav-link" style="color: white"><i class="fa fa-align-justify"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link ml-5 text-warning" (click)="sortByName()"><i class="fas fa-sort-alpha-down"></i> Sắp xếp theo tên</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ml-5 text-warning" (click)="sortByPrice()"><i class="fas fa-sort-amount-down-alt"></i> Sắp xếp theo giá</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ml-5 text-warning" (click)="sortByRating()"><i class="fas fa-thumbs-up"></i> Danh sách ưa chuộng nhất</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ml-5 text-warning"><i class="fas fa-external-link-alt"></i> Món mới</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="container-fluid" style="height: auto">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-3" *ngFor="let food of foodList | paginate: { itemsPerPage: 12, currentPage: page }">
+        <div class="single-shop-product">
+          <div class="product-upper border border-info">
+            <img class="image-product" src="{{food.avatar}}" width="100%" height="250px">
+
+          </div>
+          <h1><a routerLink="/detail/{{food.id}}">{{food.foodName}}</a></h1>
+          <h2>Loại: {{food.category.categoryName}}</h2>
+          <div class="row">
+            <div class="col">
+              <label>Giá: <span style="color: red">{{food.price | number}} (VNĐ)</span></label>
+            </div>
+            <div class="col">
+              <a class="btn btn-danger mr-3" title="Thêm vào giỏ hàng" style="float: right"><i class="fas fa-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="foodList">
+        <div class="container" *ngIf="foodList.length === 0">
+          <h2 style="color: orangered; text-align: center" >
+            Không tìm thấy sản phẩm nào !!<i class="fas fa-frown" style="margin-left: 20px"></i>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="foodList">
+      <div class="d-flex justify-content-center align-items-center mt-3 mb-3">
+        <pagination-controls *ngIf="foodList.length != 0"
+                             previousLabel="Trước"
+                             nextLabel="Sau" class="my-pagination mr-5" (pageChange)="page = $event">
+        </pagination-controls>
+      </div>
+    </div>
+
+  </div>
+</div>

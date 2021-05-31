@@ -1,0 +1,37 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-5">
+      <img class="image-product" src="{{food.avatar}}" alt="">
+    </div>
+    <div class="col-lg-6 ml-5">
+      <div class="status">
+        <span>Shop Online</span>
+      </div>
+      <h1 class="name-product">{{food.foodName}}</h1>
+      <div class="name-category">
+        <label>Loại: {{food.category.categoryName}}</label><br>
+        <label>Số lượng còn lại: <span style="color: red">{{food.quantity}}</span></label>
+      </div>
+      <div class="start">
+          <span class="full"><i class="fas fa-star"></i></span>
+          <span class="full"><i class="fas fa-star"></i></span>
+          <span class="full"><i class="fas fa-star"></i></span>
+          <span class="full"><i class="fas fa-star"></i></span>
+          <span class="full"><i class="fas fa-star-half-alt"></i></span>
+      </div>
+      <div class="mt-2">
+          <span style="font-size: 15px">Mở cửa: </span>
+          <div class="time">
+            <i class="far fa-clock"></i>
+            08:00 - 12:30 | 13:30 - 22:00
+          </div>
+      </div>
+      <div class="price-product">
+        <label>Giá: <span style="color: red">{{food.price | number}} (VNĐ)</span></label>
+      </div>
+      <div class="mt-3">
+        <a class="btn btn-danger"><i class="fas fa-plus"></i> Thêm vào giỏ</a>
+      </div>
+    </div>
+  </div>
+</div>
